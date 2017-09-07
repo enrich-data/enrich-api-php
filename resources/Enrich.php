@@ -7,6 +7,22 @@
  * Author: Valerian Saliou <valerian@valeriansaliou.name>
  */
 
-// TODO
+class GraphmobEnrich {
+  private function __construct($parent) {
+    $this->parent = $parent;
+  }
+
+  public function person($query) {
+    return $this->parent->_get("/enrich/person", $query);
+  }
+
+  public function company($query) {
+    return $this->parent->_get("/enrich/company", $query);
+  }
+
+  public function network($query) {
+    return $this->parent->_get("/enrich/network", $query);
+  }
+}
 
 ?>
