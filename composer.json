@@ -1,0 +1,19 @@
+{
+  "name": "graphmob-com/graphmob-api-php",
+  "description": "Graphmob API PHP.",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Valerian Saliou",
+      "email": "valerian@valeriansaliou.name"
+    }
+  ],
+  "require": {
+    "php": ">=5.3.0",
+    "tcdent/php-restclient": "0.1.6"
+  },
+  "autoload": {
+    "files": ["graphmob.php"]
+  }
+}
