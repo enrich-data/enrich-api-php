@@ -7,7 +7,7 @@
  * Author: Valerian Saliou <valerian@valeriansaliou.name>
  */
 
-require "../vendor/autoload.php";
+require __DIR__."/../vendor/autoload.php";
 
 $client = new Graphmob();
 
