@@ -24,7 +24,7 @@ class Graphmob {
     $this->auth = [];
 
     $this->_rest = new RestClient([
-      "user_agent"   => "graphmob-api-php/1.0.0",
+      "user_agent"   => "graphmob-api-php/1.0.1",
       "base_url"     => $this->DEFAULT_REST_HOST.$this->DEFAULT_REST_BASE,
       "content_type" => "application/json",
 

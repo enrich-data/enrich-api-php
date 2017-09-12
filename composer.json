@@ -1,7 +1,7 @@
 {
   "name": "graphmob-com/graphmob-api-php",
   "description": "Graphmob API PHP.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "homepage": "https://gitlab.com/graphmob-com/graphmob-api-php",
   "type": "library",
   "license": "MIT",

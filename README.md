@@ -60,6 +60,17 @@ This library implements all methods the Graphmob API provides. See the [API docs
 
 ### Search API
 
+#### Lookup People
+
+* **Method:** `$client->search->lookupPeople($query, $page_number)`
+* **Docs:** [https://docs.graphmob.com/api/v1/#lookup-people](https://docs.graphmob.com/api/v1/#lookup-people)
+
+```php
+$data = $client->search->lookupPeople([
+  "company_name" => "Crisp"
+], 1);
+```
+
 #### Lookup Companies
 
 * **Method:** `$client->search->lookupCompanies($query, $page_number)`

@@ -12,6 +12,12 @@ class GraphmobSearch {
     $this->parent = $parent;
   }
 
+  public function lookupPeople($query, $page_number = 1) {
+    return $this->parent->_get(
+      "/search/lookup/people/".$page_number, $query
+    );
+  }
+
   public function lookupCompanies($query, $page_number = 1) {
     return $this->parent->_get(
       "/search/lookup/companies/".$page_number, $query
