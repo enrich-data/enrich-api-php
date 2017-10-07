@@ -1,7 +1,7 @@
 <?php
 
 /*
- * graphmob-api-php
+ * enrich-api-php
  *
  * Copyright 2017, Valerian Saliou
  * Author: Valerian Saliou <valerian@valeriansaliou.name>
@@ -9,7 +9,7 @@
 
 require __DIR__."/../vendor/autoload.php";
 
-$client = new Graphmob();
+$client = new Enrich();
 
 $client->authenticate(
   "ui_a311da78-6b89-459c-8028-b331efab20d5",

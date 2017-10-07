@@ -1,7 +1,7 @@
 <?php
 
 /*
- * graphmob-api-php
+ * enrich-api-php
  *
  * Copyright 2017, Valerian Saliou
  * Author: Valerian Saliou <valerian@valeriansaliou.name>
@@ -11,8 +11,8 @@ require __DIR__."/resources/Enrich.php";
 require __DIR__."/resources/Search.php";
 require __DIR__."/resources/Verify.php";
 
-class Graphmob {
-  private $DEFAULT_REST_HOST = "https://api.graphmob.com";
+class Enrich {
+  private $DEFAULT_REST_HOST = "https://api.enrichdata.com";
   private $DEFAULT_REST_BASE = "/v1";
   private $DEFAULT_TIMEOUT = 5000;
 
@@ -24,7 +24,7 @@ class Graphmob {
     $this->auth = [];
 
     $this->_rest = new RestClient([
-      "user_agent"   => "graphmob-api-php/1.0.1",
+      "user_agent"   => "enrich-api-php/1.1.0",
       "base_url"     => $this->DEFAULT_REST_HOST.$this->DEFAULT_REST_BASE,
       "content_type" => "application/json",
 
@@ -43,9 +43,9 @@ class Graphmob {
       return json_decode($data, TRUE);
     });
 
-    $this->enrich = new GraphmobEnrich($this);
-    $this->search = new GraphmobSearch($this);
-    $this->verify = new GraphmobVerify($this);
+    $this->enrich = new EnrichEnrich($this);
+    $this->search = new EnrichSearch($this);
+    $this->verify = new EnrichVerify($this);
   }
 
   public function setRestHost($host) {

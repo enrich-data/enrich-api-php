@@ -1,10 +1,10 @@
-# graphmob-api-php
+# enrich-api-php
 
-The Graphmob API PHP wrapper. Enrich, Search and Verify data from your PHP services.
+The Enrich API PHP wrapper. Enrich, Search and Verify data from your PHP services.
 
-Copyright 2017 Graphmob. See LICENSE for copying information.
+Copyright 2017 Enrich. See LICENSE for copying information.
 
-* **📝 Implements**: [Graphmob REST API ~ v1](https://docs.graphmob.com/api/v1/) at reference revision: 07/24/2017
+* **📝 Implements**: [Enrich REST API ~ v1](https://docs.enrichdata.com/api/v1/) at reference revision: 07/24/2017
 * **😘 Maintainer**: [@valeriansaliou](https://github.com/valeriansaliou)
 
 ## Usage
@@ -17,10 +17,10 @@ Then, import it:
 require __DIR__."/vendor/autoload.php";
 ```
 
-Construct a new authenticated Graphmob client with your `user_id` and `secret_key` tokens (you can generate those from your Graphmob Dashboard, [see the docs](https://docs.graphmob.com/api/v1/)).
+Construct a new authenticated Enrich client with your `user_id` and `secret_key` tokens (you can generate those from your Enrich Dashboard, [see the docs](https://docs.enrichdata.com/api/v1/)).
 
 ```php
-$client = new Graphmob();
+$client = new Enrich();
 
 $client->authenticate("ui_xxxxxx", "sk_xxxxxx");
 ```
@@ -35,9 +35,9 @@ $data = $client->enrich->person([
 
 ## Authentication
 
-To authenticate against the API, generate your tokens (`user_id` and `secret_key`) **once** from your [Graphmob Dashboard](https://dashboard.graphmob.com/).
+To authenticate against the API, generate your tokens (`user_id` and `secret_key`) **once** from your [Enrich Dashboard](https://dashboard.enrichdata.com/).
 
-Then, pass those tokens **once** when you instanciate the Graphmob client as following:
+Then, pass those tokens **once** when you instanciate the Enrich client as following:
 
 ```php
 // Make sure to replace 'user_id' and 'secret_key' with your tokens
@@ -46,24 +46,24 @@ $client->authenticate("user_id", "secret_key");
 
 ## Data Discovery
 
-**When Graphmob doesn't know about a given data point, eg. an email that was never enriched before, it launches a discovery. Discoveries can take a few seconds, and sometimes more than 10 seconds.**
+**When Enrich doesn't know about a given data point, eg. an email that was never enriched before, it launches a discovery. Discoveries can take a few seconds, and sometimes more than 10 seconds.**
 
 This library implements a retry logic with a timeout if the discovery takes too long, or if the item wasn't found.
 
-Thus, you can expect some requests, especially the Enrich requests, to take more time than expected. This is normal, and is not a performance issue on your side, or on our side. Under the hood, when you request a data point (eg. enrich a person given an email) that doesn't yet exist in our databases, the Graphmob API returns the HTTP response `201 Created`. Then, this library will poll the enrich resource for results, with intervals of a few seconds. The API will return `404 Not Found` as the discovery is still processing and no result is yet known at this point. Once a result is found, the API will reply with `200 OK` and return discovered data. If the discovery fails and no data can be aggregated for this email, the library aborts the retry after some time (less than 20 seconds), and returns a `not_found` error.
+Thus, you can expect some requests, especially the Enrich requests, to take more time than expected. This is normal, and is not a performance issue on your side, or on our side. Under the hood, when you request a data point (eg. enrich a person given an email) that doesn't yet exist in our databases, the Enrich API returns the HTTP response `201 Created`. Then, this library will poll the enrich resource for results, with intervals of a few seconds. The API will return `404 Not Found` as the discovery is still processing and no result is yet known at this point. Once a result is found, the API will reply with `200 OK` and return discovered data. If the discovery fails and no data can be aggregated for this email, the library aborts the retry after some time (less than 20 seconds), and returns a `not_found` error.
 
-If a requested data point is already known by the Graphmob API, it will be immediately returned, which won't induce any delay.
+If a requested data point is already known by the Enrich API, it will be immediately returned, which won't induce any delay.
 
 ## Resource Methods
 
-This library implements all methods the Graphmob API provides. See the [API docs](https://docs.graphmob.com/api/v1/) for a reference of available methods, as well as how returned data is formatted.
+This library implements all methods the Enrich API provides. See the [API docs](https://docs.enrichdata.com/api/v1/) for a reference of available methods, as well as how returned data is formatted.
 
 ### Search API
 
 #### Lookup People
 
 * **Method:** `$client->search->lookupPeople($query, $page_number)`
-* **Docs:** [https://docs.graphmob.com/api/v1/#lookup-people](https://docs.graphmob.com/api/v1/#lookup-people)
+* **Docs:** [https://docs.enrichdata.com/api/v1/#lookup-people](https://docs.enrichdata.com/api/v1/#lookup-people)
 
 ```php
 $data = $client->search->lookupPeople([
@@ -74,7 +74,7 @@ $data = $client->search->lookupPeople([
 #### Lookup Companies
 
 * **Method:** `$client->search->lookupCompanies($query, $page_number)`
-* **Docs:** [https://docs.graphmob.com/api/v1/#lookup-companies](https://docs.graphmob.com/api/v1/#lookup-companies)
+* **Docs:** [https://docs.enrichdata.com/api/v1/#lookup-companies](https://docs.enrichdata.com/api/v1/#lookup-companies)
 
 ```php
 $data = $client->search->lookupCompanies([
@@ -86,7 +86,7 @@ $data = $client->search->lookupCompanies([
 #### Lookup Emails
 
 * **Method:** `$client->search->lookupEmails($query, $page_number)`
-* **Docs:** [https://docs.graphmob.com/api/v1/#lookup-emails](https://docs.graphmob.com/api/v1/#lookup-emails)
+* **Docs:** [https://docs.enrichdata.com/api/v1/#lookup-emails](https://docs.enrichdata.com/api/v1/#lookup-emails)
 
 ```php
 $data = $client->search->lookupEmails([
@@ -97,7 +97,7 @@ $data = $client->search->lookupEmails([
 #### Suggest Companies
 
 * **Method:** `$client->search->suggestCompanies($query, $page_number)`
-* **Docs:** [https://docs.graphmob.com/api/v1/#suggest-companies](https://docs.graphmob.com/api/v1/#suggest-companies)
+* **Docs:** [https://docs.enrichdata.com/api/v1/#suggest-companies](https://docs.enrichdata.com/api/v1/#suggest-companies)
 
 ```php
 $data = $client->search->suggestCompanies([
@@ -110,7 +110,7 @@ $data = $client->search->suggestCompanies([
 #### Validate an Email
 
 * **Method:** `$client->verify->validateEmail($query)`
-* **Docs:** [https://docs.graphmob.com/api/v1/#validate-an-email](https://docs.graphmob.com/api/v1/#validate-an-email)
+* **Docs:** [https://docs.enrichdata.com/api/v1/#validate-an-email](https://docs.enrichdata.com/api/v1/#validate-an-email)
 
 ```php
 $data = $client->verify->validateEmail([
@@ -121,7 +121,7 @@ $data = $client->verify->validateEmail([
 #### Format an Email
 
 * **Method:** `$client->verify->formatEmail($query)`
-* **Docs:** [https://docs.graphmob.com/api/v1/#format-an-email](https://docs.graphmob.com/api/v1/#format-an-email)
+* **Docs:** [https://docs.enrichdata.com/api/v1/#format-an-email](https://docs.enrichdata.com/api/v1/#format-an-email)
 
 ```php
 $data = $client->verify->formatEmail([
@@ -136,7 +136,7 @@ $data = $client->verify->formatEmail([
 #### Enrich a Person
 
 * **Method:** `$client->enrich->person($query)`
-* **Docs:** [https://docs.graphmob.com/api/v1/#enrich-a-person](https://docs.graphmob.com/api/v1/#enrich-a-person)
+* **Docs:** [https://docs.enrichdata.com/api/v1/#enrich-a-person](https://docs.enrichdata.com/api/v1/#enrich-a-person)
 
 ```php
 $data = $client->enrich->person([
@@ -147,7 +147,7 @@ $data = $client->enrich->person([
 #### Enrich a Company
 
 * **Method:** `$client->enrich->company($query)`
-* **Docs:** [https://docs.graphmob.com/api/v1/#enrich-a-company](https://docs.graphmob.com/api/v1/#enrich-a-company)
+* **Docs:** [https://docs.enrichdata.com/api/v1/#enrich-a-company](https://docs.enrichdata.com/api/v1/#enrich-a-company)
 
 ```php
 $data = $client->enrich->company([
@@ -158,7 +158,7 @@ $data = $client->enrich->company([
 #### Enrich a Network
 
 * **Method:** `$client->enrich->network($query)`
-* **Docs:** [https://docs.graphmob.com/api/v1/#enrich-a-network](https://docs.graphmob.com/api/v1/#enrich-a-network)
+* **Docs:** [https://docs.enrichdata.com/api/v1/#enrich-a-network](https://docs.enrichdata.com/api/v1/#enrich-a-network)
 
 ```php
 $data = $client->enrich->network([

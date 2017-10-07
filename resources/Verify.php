@@ -1,13 +1,13 @@
 <?php
 
 /*
- * graphmob-api-php
+ * enrich-api-php
  *
  * Copyright 2017, Valerian Saliou
  * Author: Valerian Saliou <valerian@valeriansaliou.name>
  */
 
-class GraphmobVerify {
+class EnrichVerify {
   public function __construct($parent) {
     $this->parent = $parent;
   }

@@ -1,8 +1,8 @@
 {
-  "name": "graphmob-com/graphmob-api-php",
-  "description": "Graphmob API PHP.",
-  "version": "1.0.1",
-  "homepage": "https://gitlab.com/graphmob-com/graphmob-api-php",
+  "name": "enrich-data/enrich-api-php",
+  "description": "Enrich API PHP.",
+  "version": "1.1.0",
+  "homepage": "https://gitlab.com/enrich-data/enrich-api-php",
   "type": "library",
   "license": "MIT",
   "authors": [
@@ -16,6 +16,6 @@
     "tcdent/php-restclient": "0.1.6"
   },
   "autoload": {
-    "files": ["graphmob.php"]
+    "files": ["enrich.php"]
   }
 }
