@@ -24,7 +24,7 @@ class Enrich {
     $this->auth = [];
 
     $this->_rest = new RestClient([
-      "user_agent"   => "enrich-api-php/1.1.0",
+      "user_agent"   => "enrich-api-php/1.1.1",
       "base_url"     => $this->DEFAULT_REST_HOST.$this->DEFAULT_REST_BASE,
       "content_type" => "application/json",
 
@@ -43,9 +43,9 @@ class Enrich {
       return json_decode($data, TRUE);
     });
 
-    $this->enrich = new EnrichEnrich($this);
-    $this->search = new EnrichSearch($this);
-    $this->verify = new EnrichVerify($this);
+    $this->enrich = new EnrichResource($this);
+    $this->search = new SearchResource($this);
+    $this->verify = new VerifyResource($this);
   }
 
   public function setRestHost($host) {

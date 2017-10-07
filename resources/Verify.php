@@ -7,7 +7,7 @@
  * Author: Valerian Saliou <valerian@valeriansaliou.name>
  */
 
-class EnrichVerify {
+class VerifyResource {
   public function __construct($parent) {
     $this->parent = $parent;
   }

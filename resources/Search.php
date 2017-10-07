@@ -7,7 +7,7 @@
  * Author: Valerian Saliou <valerian@valeriansaliou.name>
  */
 
-class EnrichSearch {
+class SearchResource {
   public function __construct($parent) {
     $this->parent = $parent;
   }

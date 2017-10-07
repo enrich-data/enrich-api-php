@@ -7,7 +7,7 @@
  * Author: Valerian Saliou <valerian@valeriansaliou.name>
  */
 
-class EnrichEnrich {
+class EnrichResource {
   public function __construct($parent) {
     $this->parent = $parent;
   }
