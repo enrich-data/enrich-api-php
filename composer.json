@@ -2,7 +2,7 @@
   "name": "enrich-data/enrich-api-php",
   "description": "Enrich API PHP.",
   "version": "1.1.1",
-  "homepage": "https://gitlab.com/enrich-data/enrich-api-php",
+  "homepage": "https://github.com/enrich-data/enrich-api-php",
   "type": "library",
   "license": "MIT",
   "authors": [
