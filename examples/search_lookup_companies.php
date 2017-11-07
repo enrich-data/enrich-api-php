@@ -17,7 +17,7 @@ $client->authenticate(
 );
 
 $data = $client->search->lookupCompanies([
-  "legal_name" => "Crisp IM, Inc.",
+  "legal_name" => "Crisp IM SARL",
   "founded" => 2015
 ], 1);
 

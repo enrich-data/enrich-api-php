@@ -17,7 +17,7 @@ $client->authenticate(
 );
 
 $data = $client->enrich->company([
-  "legal_name" => "Crisp IM, Inc."
+  "legal_name" => "Crisp IM SARL"
 ]);
 
 var_dump($data);

@@ -78,7 +78,7 @@ $data = $client->search->lookupPeople([
 
 ```php
 $data = $client->search->lookupCompanies([
-  "legal_name" => "Crisp IM, Inc.",
+  "legal_name" => "Crisp IM SARL",
   "founded" => 2015
 ], 1);
 ```
@@ -151,7 +151,7 @@ $data = $client->enrich->person([
 
 ```php
 $data = $client->enrich->company([
-  "legal_name" => "Crisp IM, Inc."
+  "legal_name" => "Crisp IM SARL"
 ]);
 ```
 
