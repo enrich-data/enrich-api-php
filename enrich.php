@@ -24,7 +24,7 @@ class Enrich {
     $this->auth = [];
 
     $this->_rest = new RestClient([
-      "user_agent"   => "enrich-api-php/1.1.1",
+      "user_agent"   => "enrich-api-php/1.1.2",
       "base_url"     => $this->DEFAULT_REST_HOST.$this->DEFAULT_REST_BASE,
       "content_type" => "application/json",
 
