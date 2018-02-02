@@ -58,53 +58,6 @@ If a requested data point is already known by the Enrich API, it will be immedia
 
 This library implements all methods the Enrich API provides. See the [API docs](https://docs.enrichdata.com/api/v1/) for a reference of available methods, as well as how returned data is formatted.
 
-### Search API
-
-#### Lookup People
-
-* **Method:** `$client->search->lookupPeople($query, $page_number)`
-* **Docs:** [https://docs.enrichdata.com/api/v1/#lookup-people](https://docs.enrichdata.com/api/v1/#lookup-people)
-
-```php
-$data = $client->search->lookupPeople([
-  "company_name" => "Crisp"
-], 1);
-```
-
-#### Lookup Companies
-
-* **Method:** `$client->search->lookupCompanies($query, $page_number)`
-* **Docs:** [https://docs.enrichdata.com/api/v1/#lookup-companies](https://docs.enrichdata.com/api/v1/#lookup-companies)
-
-```php
-$data = $client->search->lookupCompanies([
-  "legal_name" => "Crisp IM SARL",
-  "founded" => 2015
-], 1);
-```
-
-#### Lookup Emails
-
-* **Method:** `$client->search->lookupEmails($query, $page_number)`
-* **Docs:** [https://docs.enrichdata.com/api/v1/#lookup-emails](https://docs.enrichdata.com/api/v1/#lookup-emails)
-
-```php
-$data = $client->search->lookupEmails([
-  "email_domain" => "crisp.chat"
-], 1);
-```
-
-#### Suggest Companies
-
-* **Method:** `$client->search->suggestCompanies($query, $page_number)`
-* **Docs:** [https://docs.enrichdata.com/api/v1/#suggest-companies](https://docs.enrichdata.com/api/v1/#suggest-companies)
-
-```php
-$data = $client->search->suggestCompanies([
-  "company_name" => "Crisp"
-], 1);
-```
-
 ### Verify API
 
 #### Validate an Email
@@ -118,19 +71,6 @@ $data = $client->verify->validateEmail([
 ]);
 ```
 
-#### Format an Email
-
-* **Method:** `$client->verify->formatEmail($query)`
-* **Docs:** [https://docs.enrichdata.com/api/v1/#format-an-email](https://docs.enrichdata.com/api/v1/#format-an-email)
-
-```php
-$data = $client->verify->formatEmail([
-  "email_domain" => "crisp.chat",
-  "first_name" => "Valerian",
-  "last_name" => "Saliou"
-]);
-```
-
 ### Enrich API
 
 #### Enrich a Person
@@ -141,17 +81,6 @@ $data = $client->verify->formatEmail([
 ```php
 $data = $client->enrich->person([
   "email" => "valerian@crisp.chat"
-]);
-```
-
-#### Enrich a Company
-
-* **Method:** `$client->enrich->company($query)`
-* **Docs:** [https://docs.enrichdata.com/api/v1/#enrich-a-company](https://docs.enrichdata.com/api/v1/#enrich-a-company)
-
-```php
-$data = $client->enrich->company([
-  "name" => "Crisp IM"
 ]);
 ```
 

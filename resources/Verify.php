@@ -15,10 +15,6 @@ class VerifyResource {
   public function validateEmail($query) {
     return $this->parent->_get("/verify/validate/email", $query);
   }
-
-  public function formatEmail($query) {
-    return $this->parent->_get("/verify/format/email", $query);
-  }
 }
 
 ?>

@@ -8,7 +8,6 @@
  */
 
 require __DIR__."/resources/Enrich.php";
-require __DIR__."/resources/Search.php";
 require __DIR__."/resources/Verify.php";
 
 class Enrich {
@@ -24,7 +23,7 @@ class Enrich {
     $this->auth = [];
 
     $this->_rest = new RestClient([
-      "user_agent"   => "enrich-api-php/1.1.2",
+      "user_agent"   => "enrich-api-php/1.1.3",
       "base_url"     => $this->DEFAULT_REST_HOST.$this->DEFAULT_REST_BASE,
       "content_type" => "application/json",
 
@@ -44,7 +43,6 @@ class Enrich {
     });
 
     $this->enrich = new EnrichResource($this);
-    $this->search = new SearchResource($this);
     $this->verify = new VerifyResource($this);
   }
 
