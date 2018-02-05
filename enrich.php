@@ -17,7 +17,7 @@ class Enrich {
 
   private $CREATED_STATUS_CODE = 201;
   private $NOT_FOUND_STATUS_CODE = 404;
-  private $CREATED_RETRY_COUNT_MAX = 2;
+  private $CREATED_RETRY_COUNT_MAX = 10;
 
   public function __construct() {
     $this->auth = [];
