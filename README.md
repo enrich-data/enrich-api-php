@@ -84,6 +84,17 @@ $data = $client->enrich->person([
 ]);
 ```
 
+#### Enrich a Company
+
+* **Method:** `$client->enrich->company($query)`
+* **Docs:** [https://docs.enrichdata.com/api/v1/#enrich-a-company](https://docs.enrichdata.com/api/v1/#enrich-a-company)
+
+```php
+$data = $client->enrich->company([
+  "domain" => "crisp.chat"
+]);
+```
+
 #### Enrich a Network
 
 * **Method:** `$client->enrich->network($query)`

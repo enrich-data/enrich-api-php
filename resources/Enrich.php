@@ -16,6 +16,10 @@ class EnrichResource {
     return $this->parent->_get("/enrich/person", $query);
   }
 
+  public function company($query) {
+    return $this->parent->_get("/enrich/company", $query);
+  }
+
   public function network($query) {
     return $this->parent->_get("/enrich/network", $query);
   }
