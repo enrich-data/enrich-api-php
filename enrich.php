@@ -11,7 +11,7 @@ require __DIR__."/resources/Enrich.php";
 require __DIR__."/resources/Verify.php";
 
 class Enrich {
-  private $DEFAULT_REST_HOST = "https://api.enrichdata.com";
+  private $DEFAULT_REST_HOST = "https://api.enrich.email";
   private $DEFAULT_REST_BASE = "/v1";
   private $DEFAULT_TIMEOUT = 40000;
 
@@ -19,7 +19,7 @@ class Enrich {
     $this->auth = [];
 
     $this->_rest = new RestClient([
-      "user_agent"   => "enrich-api-php/1.2.0",
+      "user_agent"   => "enrich-api-php/2.0.0",
       "base_url"     => $this->DEFAULT_REST_HOST.$this->DEFAULT_REST_BASE,
       "content_type" => "application/json",
 
